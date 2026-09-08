@@ -27,8 +27,8 @@ module "alb" {
 module "compute" {
   source = "./modules/compute"
 
-  project_name = var.project_name
-  environment  = terraform.workspace
+  project_name  = var.project_name
+  environment   = terraform.workspace
   instance_type = var.instance_type
 
   desired_instances = local.desired_instances
