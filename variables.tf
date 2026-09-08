@@ -34,24 +34,6 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
-variable "desired_instances" {
-  description = "Desired number of EC2 instances"
-  type        = number
-  default     = 1
-}
-
-variable "min_instances" {
-  description = "Minimum number of EC2 instances"
-  type        = number
-  default     = 1
-}
-
-variable "max_instances" {
-  description = "Maximum number of EC2 instances"
-  type        = number
-  default     = 1
-}
-
 variable "ssh_cidr" {
   description = "CIDR allowed to SSH to EC2"
   type        = string

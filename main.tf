@@ -27,12 +27,14 @@ module "alb" {
 module "compute" {
   source = "./modules/compute"
 
-  project_name      = var.project_name
-  environment       = terraform.workspace
-  instance_type     = var.instance_type
-  desired_instances = var.desired_instances
-  min_instances     = var.min_instances
-  max_instances     = var.max_instances
+  project_name = var.project_name
+  environment  = terraform.workspace
+  instance_type = var.instance_type
+
+  desired_instances = local.desired_instances
+  min_instances     = local.min_instances
+  max_instances     = local.max_instances
+
   public_subnet_ids = module.vpc.public_subnet_ids
   security_group_id = module.security_groups.ec2_security_group_id
   target_group_arn  = module.alb.target_group_arn
